@@ -1,5 +1,6 @@
 import data
 from typing import Optional
+from data import Book
 
 # Write your functions for each part in the space below.
 
@@ -37,6 +38,15 @@ def selection_sort(values:list[int]) -> None:
 
 
 # Part 1
+#DESIGN RECIPE:
+    # Purpose: This function, when given a single parameter of type list[Book]. uses a selection sort to sort the list of a book by title in alphabetical order.
+    # Name of function: selection_sort_books
+    # Input type: list[str]  Output type: list[str]
+    # Example Input: [('Toni Morrison', 'The Bluest Eye'), ('Andy Weir', 'Project Hail Mary')]
+    # Output given the example input: [('Andy Weir', 'Project Hail Mary'), ('Toni Morrison', 'The Bluest Eye')]
+    #How would I solve this problem if I was a computer? I'd take my list of books, sort through the first index of each nested list (exclude the author).
+
+def selection_sort_books(books: list[Book]) -> list:
 
 
 # Part 2
