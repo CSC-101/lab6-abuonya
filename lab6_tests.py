@@ -1,6 +1,7 @@
 import data
 import lab6
 import unittest
+from data import Book
 
 
 # Write your test cases for each part below.
@@ -64,6 +65,14 @@ class TestCases(unittest.TestCase):
 
 
     # Part 1
+
+    def test_selection_sort_books1(self):
+        books_to_sort1 = Book('Toni Morrison', 'The Bluest Eye')
+        books_to_sort2 = Book('Andy Weir', 'Project Hail Mary')
+        books_list = [books_to_sort1, books_to_sort2]
+        result = lab6.selection_sort_books(books_list)
+        expected = [('Andy Weir', 'Project Hail Mary'), ('Toni Morrison', 'The Bluest Eye')]
+        self.assertEqual(expected, result)
 
 
     # Part 2
