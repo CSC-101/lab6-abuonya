@@ -46,7 +46,24 @@ def selection_sort(values:list[int]) -> None:
     # Output given the example input: [('Andy Weir', 'Project Hail Mary'), ('Toni Morrison', 'The Bluest Eye')]
     #How would I solve this problem if I was a computer? I'd take my list of books, sort through the first index of each nested list (exclude the author).
 
+
+def index_smallest_from1(books:list[str], start:str) -> Optional[int]:
+    if start >= len(books) or start < 0:
+        return None
+
+    mindex = start
+    for idx in range(start + 1, len(books)):
+        if books[idx] < books[mindex]:
+            mindex = idx
+
+    return mindex
+
 def selection_sort_books(books: list[Book]) -> list:
+    for idx in range(len(books) - 1):
+        mindex = index_smallest_from1(books, idx)
+        tmp = books[mindex]
+        books[mindex] = books[idx]
+        books[idx] = tmp
 
 
 # Part 2
