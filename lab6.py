@@ -69,6 +69,39 @@ def selection_sort_books(books: list[Book]) -> list:
 
 
 # Part 3
+def str_translate(string: str, old: str, new: str) -> str:
+    temp = list(string)
+    for x in temp:
+        if x == old:
+
+
+str_translate("xxxxxxx", "x", "a")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 # Part 4
