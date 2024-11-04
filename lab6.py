@@ -106,5 +106,6 @@ def str_translate(string:str, old:str, new:str) -> str:
             translated_str.append(idx)
 
     translated_str = ''.join(translated_str)
+    print(translated_str)
     return translated_str
 # Part 4
