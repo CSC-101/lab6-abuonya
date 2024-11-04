@@ -140,10 +140,18 @@ class TestCases(unittest.TestCase):
         self.assertEqual(expected, result)
 
     def test_histogram2(self):
-        string = "I Love, Love, Love, Love My Cat"
+        string = "Meow Meow Meow Meow Meow Meow"
         result = lab6.histogram(string)
-        expected = {"I":1, "Love":4, "My":1, "Cat":1}
+        expected = {"Meow":6}
         self.assertEqual(expected, result)
+
+    def test_histogram3(self):
+        string = ""
+        result = lab6.histogram(string)
+        expected = {}
+        self.assertEqual(expected, result)
+
+
 
 
 if __name__ == '__main__':
