@@ -47,12 +47,9 @@ def selection_sort(values:list[int]) -> None:
     #How would I solve this problem if I was a computer? I'd take my list of books, sort through the first index of each nested list (exclude the author).
 
 def index_smallest_from1(books:list[str], start:str) -> Optional[int]:
-    if start >= len(books) or start < 0:
-        return None
-
     mindex = start
     for idx in range(start + 1, len(books)):
-        if books[idx] < books[mindex]:
+        if books[idx].title < books[mindex].title:
             mindex = idx
 
     return mindex
@@ -69,13 +66,12 @@ def selection_sort_books(books: list[Book]) -> list:
 
 
 # Part 3
-def str_translate(string: str, old: str, new: str) -> str:
-    temp = list(string)
-    for x in temp:
-        if x == old:
+# def str_translate(string: str, old: str, new: str) -> str:
+   #3 temp = list(string)
+   # for x in temp:
+      #  if temp[x] == old:
+     #       x = new
 
-
-str_translate("xxxxxxx", "x", "a")
 
 
 
