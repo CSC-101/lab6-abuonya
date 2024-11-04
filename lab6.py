@@ -88,8 +88,7 @@ def swap_case (string:str) -> str:
 
 # Part 3
 #DESIGN RECIPE:
-    # Purpose: This function, when given three parameters (a strings, two of which are the old and new character) and return
-    # a new string that replaces each occurence of the old character with the new character.
+    # Purpose: This function, when given three parameters (a strings, two of which are the old and new character) and returns a  new string that replaces each occurrence of the old character with the new character.
     # Name of function: str_translate
     # Input type: str  Output type: str
     # Example Input: 'Wow!' , w, e
@@ -108,4 +107,14 @@ def str_translate(string:str, old:str, new:str) -> str:
     translated_str = ''.join(translated_str)
     print(translated_str)
     return translated_str
+
 # Part 4
+#DESIGN RECIPE:
+    # Purpose: This function, when given a single string, returns a dictionary mapping of strings to integers. It counts the number of times the word appears in the string.
+    # Name of function: histogram
+    # Input type: str  Output type: str
+    # Example Input: "Cat Cat Cat Cat"
+    # Output given the example input: {"Cat":4}
+    #How would I solve this problem if I was a computer? create an empty dictionary to populate with words (key) and their associated count (value) to create a key-value pair.
+
+
