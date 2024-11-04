@@ -71,10 +71,17 @@ class TestCases(unittest.TestCase):
         books_to_sort2 = Book('Andy Weir', 'Project Hail Mary')
         books_list = [books_to_sort1, books_to_sort2]
         result = lab6.selection_sort_books(books_list)
-        expected = [('Andy Weir', 'Project Hail Mary'), ('Toni Morrison', 'The Bluest Eye')]
+        expected = [Book('Andy Weir', 'Project Hail Mary'), Book('Toni Morrison', 'The Bluest Eye')]
         self.assertEqual(expected, result)
 
-
+    def test_selection_sort_books2(self):
+        books_to_sort1 = Book('Toni Morrison', 'The Bluest Eye')
+        books_to_sort2 = Book('Andy Weir', 'Project Hail Mary')
+        books_to_sort3 = Book('Random Author', 'A Silly Tale')
+        books_list = [books_to_sort1, books_to_sort2, books_to_sort3]
+        result = lab6.selection_sort_books(books_list)
+        expected = [Book('Random Author', 'A Silly Tale'), Book('Andy Weir', 'Project Hail Mary'), Book('Toni Morrison', 'The Bluest Eye')]
+        self.assertEqual(expected, result)
     # Part 2
 
 
