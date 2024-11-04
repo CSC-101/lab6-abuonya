@@ -63,6 +63,16 @@ def selection_sort_books(books: list[Book]) -> list:
     return books
 
 # Part 2
+#DESIGN RECIPE:
+    # Purpose: This function, when given a single parameter of type str, makes the lowercase character uppercase and vice versa for the given string.
+    # Name of function: swap_case
+    # Input type: str  Output type: str
+    # Example Input: 'meow'
+    # Output given the example input: 'MEOW'
+    #How would I solve this problem if I was a computer? I'd iterate through each character, modifying the index's value to be upper/lower, depending on if its upper/lower.
+
+def
+
 
 
 # Part 3

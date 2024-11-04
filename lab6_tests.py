@@ -82,6 +82,12 @@ class TestCases(unittest.TestCase):
         result = lab6.selection_sort_books(books_list)
         expected = [Book('Random Author', 'A Silly Tale'), Book('Andy Weir', 'Project Hail Mary'), Book('Toni Morrison', 'The Bluest Eye')]
         self.assertEqual(expected, result)
+
+    def test_selection_sort_books3(self):
+        books_list = []
+        result = lab6.selection_sort_books(books_list)
+        expected = []
+        self.assertEqual(expected, result)
     # Part 2
 
 
