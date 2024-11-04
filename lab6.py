@@ -60,6 +60,7 @@ def selection_sort_books(books: list[Book]) -> list:
         tmp = books[mindex]
         books[mindex] = books[idx]
         books[idx] = tmp
+    print(books)
     return books
 
 # Part 2
@@ -85,11 +86,24 @@ def swap_case (string:str) -> str:
     print(final_swap)
     return final_swap
 
-
-
-
 # Part 3
+#DESIGN RECIPE:
+    # Purpose: This function, when given three parameters (a strings, two of which are the old and new character) and return
+    # a new string that replaces each occurence of the old character with the new character.
+    # Name of function: str_translate
+    # Input type: str  Output type: str
+    # Example Input: 'Wow!' , w, e
+    # Output given the example input: 'eoe'
+    #How would I solve this problem if I was a computer? I'd iterate through each character, modifying the index's value IF it is equal to the old character provided,
+    # changing that index value to the new character.
 
+def str_translate(string:str, old:str, new:str) -> str:
+    translated_str = []
+    for idx in string:
+        if idx == old:
+            translated_str.append(new)
+        else:
+            translated_str.append(idx)
 
-
+    translated_str
 # Part 4

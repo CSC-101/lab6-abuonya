@@ -101,6 +101,12 @@ class TestCases(unittest.TestCase):
         expected = 'mEoW!!1'
         self.assertEqual(expected, result)
 
+    def test_swap_case3(self):
+        string = '143 <3'
+        result = lab6.swap_case(string)
+        expected = '143 <3'
+        self.assertEqual(expected, result)
+
     # Part 3
 
 
