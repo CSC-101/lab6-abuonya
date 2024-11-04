@@ -74,11 +74,14 @@ def selection_sort_books(books: list[Book]) -> list:
 def swap_case (string:str) -> str:
     final_swap = []
     for idx in string:
-        if idx.isupper():
-            final_swap.append(idx.lower)
-        elif idx.islower():
-            final_swap.append(idx.upper)
+        if idx.isupper(): # uppercase --> lowercase
+            final_swap.append(idx.lower())
+        elif idx.islower():  # lowercase --> uppercase
+            final_swap.append(idx.upper())
+        else:
+            final_swap.append(idx) # keep anything that isn't changed
 
+    final_swap = ''.join(final_swap)
     print(final_swap)
     return final_swap
 
