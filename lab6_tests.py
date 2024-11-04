@@ -108,8 +108,10 @@ class TestCases(unittest.TestCase):
         self.assertEqual(expected, result)
 
     # Part 3
-
-
+    def test_str_translate1(self):
+        string = 'WOW!'
+        old = 'W'
+        new =
     # Part 4
 
 
