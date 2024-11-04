@@ -117,4 +117,13 @@ def str_translate(string:str, old:str, new:str) -> str:
     # Output given the example input: {"Cat":4}
     #How would I solve this problem if I was a computer? create an empty dictionary to populate with words (key) and their associated count (value) to create a key-value pair.
 
-
+def histogram(string:str) -> dict:
+    temp = str.split(string)
+    dict = {}
+    for x in temp:
+        if x not in dict:
+            dict[x] = 1
+        else:
+            dict[x] += 1
+    print(dict)
+    return dict

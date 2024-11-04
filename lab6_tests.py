@@ -131,7 +131,9 @@ class TestCases(unittest.TestCase):
         result = lab6.str_translate(string, old, new)
         expected = 'I Love My FWt CWt'
         self.assertEqual(expected, result)
+
     # Part 4
+    def
 
 
 
