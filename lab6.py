@@ -71,7 +71,17 @@ def selection_sort_books(books: list[Book]) -> list:
     # Output given the example input: 'MEOW'
     #How would I solve this problem if I was a computer? I'd iterate through each character, modifying the index's value to be upper/lower, depending on if its upper/lower.
 
-def
+def swap_case (string:str) -> str:
+    final_swap = []
+    for idx in string:
+        if idx.isupper():
+            final_swap.append(idx.lower)
+        elif idx.islower():
+            final_swap.append(idx.upper)
+
+    print(final_swap)
+    return final_swap
+
 
 
 
