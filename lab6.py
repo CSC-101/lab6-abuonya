@@ -1,5 +1,6 @@
 import data
 from typing import Optional
+from data import Book
 
 # Write your functions for each part in the space below.
 
@@ -37,12 +38,92 @@ def selection_sort(values:list[int]) -> None:
 
 
 # Part 1
+#DESIGN RECIPE:
+    # Purpose: This function, when given a single parameter of type list[Book]. uses a selection sort to sort the list of a book by title in alphabetical order.
+    # Name of function: selection_sort_books
+    # Input type: list[str]  Output type: list[str]
+    # Example Input: [('Toni Morrison', 'The Bluest Eye'), ('Andy Weir', 'Project Hail Mary')]
+    # Output given the example input: [('Andy Weir', 'Project Hail Mary'), ('Toni Morrison', 'The Bluest Eye')]
+    #How would I solve this problem if I was a computer? I'd take my list of books, sort through the first index of each nested list (exclude the author).
 
+def index_smallest_from1(books:list[Book], start:int) -> Optional[int]:
+    mindex = start
+    for idx in range(start + 1, len(books)):
+        if books[idx].title < books[mindex].title:
+            mindex = idx
+
+    return mindex
+
+def selection_sort_books(books: list[Book]) -> list:
+    for idx in range(len(books) - 1):
+        mindex = index_smallest_from1(books, idx)
+        tmp = books[mindex]
+        books[mindex] = books[idx]
+        books[idx] = tmp
+    print(books)
+    return books
 
 # Part 2
+#DESIGN RECIPE:
+    # Purpose: This function, when given a single parameter of type str, makes the lowercase character uppercase and vice versa for the given string.
+    # Name of function: swap_case
+    # Input type: str  Output type: str
+    # Example Input: 'meow'
+    # Output given the example input: 'MEOW'
+    #How would I solve this problem if I was a computer? I'd iterate through each character, modifying the index's value to be upper/lower, depending on if its upper/lower.
 
+def swap_case (string:str) -> str:
+    final_swap = []
+    for idx in string:
+        if idx.isupper(): # uppercase --> lowercase
+            final_swap.append(idx.lower())
+        elif idx.islower():  # lowercase --> uppercase
+            final_swap.append(idx.upper())
+        else:
+            final_swap.append(idx) # keep anything that isn't changed
+
+    final_swap = ''.join(final_swap)
+    print(final_swap)
+    return final_swap
 
 # Part 3
+#DESIGN RECIPE:
+    # Purpose: This function, when given three parameters (a strings, two of which are the old and new character) and returns a  new string that replaces each occurrence of the old character with the new character.
+    # Name of function: str_translate
+    # Input type: str  Output type: str
+    # Example Input: 'Wow!' , w, e
+    # Output given the example input: 'eoe'
+    #How would I solve this problem if I was a computer? I'd iterate through each character, modifying the index's value IF it is equal to the old character provided,
+    # changing that index value to the new character.
 
+def str_translate(string:str, old:str, new:str) -> str:
+    translated_str = []
+    for idx in string:
+        if idx == old:
+            translated_str.append(new)
+        else:
+            translated_str.append(idx)
+
+    translated_str = ''.join(translated_str)
+    print(translated_str)
+    return translated_str
 
 # Part 4
+#DESIGN RECIPE:
+    # Purpose: This function, when given a single string, returns a dictionary mapping of strings to integers. It counts the number of times the word appears in the string.
+    # Name of function: histogram
+    # Input type: str  Output type: str
+    # Example Input: "Cat Cat Cat Cat"
+    # Output given the example input: {"Cat":4}
+    #How would I solve this problem if I was a computer? create an empty dictionary to populate with words (key) and their associated count (value) to create a key-value pair.
+
+def histogram(string:str) -> dict:
+    temp = str.split(string)
+    dict = {}
+    for x in temp:
+        if x not in dict:
+            dict[x] = 1
+        else:
+            dict[x] += 1
+    print(dict)
+    return dict

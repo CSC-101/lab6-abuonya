@@ -1,6 +1,7 @@
 import data
 import lab6
 import unittest
+from data import Book
 
 
 # Write your test cases for each part below.
@@ -65,15 +66,90 @@ class TestCases(unittest.TestCase):
 
     # Part 1
 
+    def test_selection_sort_books1(self):
+        books_to_sort1 = Book('Toni Morrison', 'The Bluest Eye')
+        books_to_sort2 = Book('Andy Weir', 'Project Hail Mary')
+        books_list = [books_to_sort1, books_to_sort2]
+        result = lab6.selection_sort_books(books_list)
+        expected = [Book('Andy Weir', 'Project Hail Mary'), Book('Toni Morrison', 'The Bluest Eye')]
+        self.assertEqual(expected, result)
 
+    def test_selection_sort_books2(self):
+        books_to_sort1 = Book('Toni Morrison', 'The Bluest Eye')
+        books_to_sort2 = Book('Andy Weir', 'Project Hail Mary')
+        books_to_sort3 = Book('Random Author', 'A Silly Tale')
+        books_list = [books_to_sort1, books_to_sort2, books_to_sort3]
+        result = lab6.selection_sort_books(books_list)
+        expected = [Book('Random Author', 'A Silly Tale'), Book('Andy Weir', 'Project Hail Mary'), Book('Toni Morrison', 'The Bluest Eye')]
+        self.assertEqual(expected, result)
+
+    def test_selection_sort_books3(self):
+        books_list = []
+        result = lab6.selection_sort_books(books_list)
+        expected = []
+        self.assertEqual(expected, result)
     # Part 2
+    def test_swap_case1(self):
+        string = 'meow'
+        result = lab6.swap_case(string)
+        expected = 'MEOW'
+        self.assertEqual(expected, result)
 
+    def test_swap_case2(self):
+        string = 'MeOw!!1'
+        result = lab6.swap_case(string)
+        expected = 'mEoW!!1'
+        self.assertEqual(expected, result)
+
+    def test_swap_case3(self):
+        string = '143 <3'
+        result = lab6.swap_case(string)
+        expected = '143 <3'
+        self.assertEqual(expected, result)
 
     # Part 3
+    def test_str_translate1(self):
+        string = 'WOW!'
+        old = 'W'
+        new = 'E'
+        result = lab6.str_translate(string, old, new)
+        expected = 'EOE!'
+        self.assertEqual(expected, result)
 
+    def test_str_translate2(self):
+        string = 'WWWWWWWWWW!2345'
+        old = 'W'
+        new = 'E'
+        result = lab6.str_translate(string, old, new)
+        expected = 'EEEEEEEEEE!2345'
+        self.assertEqual(expected, result)
+
+    def test_str_translate3(self):
+        string = 'I Love My Fat Cat'
+        old = 'a'
+        new = 'W'
+        result = lab6.str_translate(string, old, new)
+        expected = 'I Love My FWt CWt'
+        self.assertEqual(expected, result)
 
     # Part 4
+    def test_histogram1(self):
+        string = "I Love Love Love Love My Cat"
+        result = lab6.histogram(string)
+        expected = {"I":1, "Love":4, "My":1, "Cat":1}
+        self.assertEqual(expected, result)
 
+    def test_histogram2(self):
+        string = "Meow Meow Meow Meow Meow Meow"
+        result = lab6.histogram(string)
+        expected = {"Meow":6}
+        self.assertEqual(expected, result)
+
+    def test_histogram3(self):
+        string = ""
+        result = lab6.histogram(string)
+        expected = {}
+        self.assertEqual(expected, result)
 
 
 
