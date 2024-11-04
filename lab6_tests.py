@@ -115,6 +115,22 @@ class TestCases(unittest.TestCase):
         result = lab6.str_translate(string, old, new)
         expected = 'EOE!'
         self.assertEqual(expected, result)
+
+    def test_str_translate2(self):
+        string = 'WWWWWWWWWW!2345'
+        old = 'W'
+        new = 'E'
+        result = lab6.str_translate(string, old, new)
+        expected = 'EEEEEEEEEE!2345'
+        self.assertEqual(expected, result)
+
+    def test_str_translate3(self):
+        string = 'I Love My Fat Cat'
+        old = 'a'
+        new = 'W'
+        result = lab6.str_translate(string, old, new)
+        expected = 'I Love My FWt CWt'
+        self.assertEqual(expected, result)
     # Part 4
 
 
